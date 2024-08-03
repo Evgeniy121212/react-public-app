@@ -23,6 +23,8 @@ function App() {
         <BrowserRouter>
           <Link className="App-link" to="/">Home</Link>
           <Link className="App-link" to="about">About</Link>
+          <br/>
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
