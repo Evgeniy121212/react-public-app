@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { HashRouter, Link, Route, Routes } from "react-router-dom";
 
 function HomePage() {
   return <>
@@ -20,7 +20,7 @@ function App() {
         <p>
           Hello Gd-FD3-21-24!
         </p>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename={process.env.PUBLIC_URL}>
           <Link className="App-link" to="/">Home</Link>
           <Link className="App-link" to="/about">About</Link>
           <br/>
@@ -29,7 +29,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </header>
     </div>
   );
