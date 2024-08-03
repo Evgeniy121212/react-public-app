@@ -20,10 +20,9 @@ function App() {
         <p>
           Hello Gd-FD3-21-24!
         </p>
-        <Link to="/">Home</Link>
-        <Link to="about">About</Link>
-
         <BrowserRouter>
+          <Link className="App-link" to="/">Home</Link>
+          <Link className="App-link" to="about">About</Link>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
