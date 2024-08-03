@@ -20,7 +20,7 @@ function App() {
         <p>
           Hello Gd-FD3-21-24!
         </p>
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
           <Link className="App-link" to="/">Home</Link>
           <Link className="App-link" to="/about">About</Link>
           <br/>
