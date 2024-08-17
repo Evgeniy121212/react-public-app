@@ -2,7 +2,6 @@
   "name": "react-public-app-ts",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://evgeniy121212.github.io/react-public-app/",
   "dependencies": {
     "firebase": "^10.12.5",
     "react": "^18.3.1",
