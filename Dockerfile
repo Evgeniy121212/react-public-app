@@ -1,14 +1,14 @@
-# Stage 0, "build-stage", based on Node.js to build the frontend
-FROM node:16 as build
+# Этап 1: Сборка приложения
+FROM node:18-alpine as build-stage
 WORKDIR /app
-COPY package*.json /app/
-RUN yarn install
-COPY . /app/
-RUN yarn build
+COPY package*.json ./
+RUN yarn
+COPY . .
+RUN yarn run build
 
-# Stage 1, based on NGINX to provide a configuration to be used with react-router
+# Этап 2: Настройка сервера nginx
 FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build-stage /app/build /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/conf.d
 EXPOSE 80
